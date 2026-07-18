@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #0b1220;
+  --ink-soft: #141b2b;
+  --paper: #f3f1ea;
+  --paper-dim: #e7e4da;
+  --graphite: #14171c;
+  --graphite-soft: #4b4f57;
+  --brass: #b8925a;
+  --brass-soft: #d9bd94;
+  --trace: #4c7a6d;
+  --line: #d8d5cc;
+  --line-dark: #253046;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-paper: var(--paper);
+  --color-paper-dim: var(--paper-dim);
+  --color-graphite: var(--graphite);
+  --color-graphite-soft: var(--graphite-soft);
+  --color-brass: var(--brass);
+  --color-brass-soft: var(--brass-soft);
+  --color-trace: var(--trace);
+  --color-line: var(--line);
+  --color-line-dark: var(--line-dark);
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-inter);
+  --font-mono: var(--font-plex-mono);
+}
+
+* {
+  border-color: var(--line);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--graphite);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--brass);
+  color: var(--paper);
+}
+
+/* Signature signal-trace ticker */
+.trace-track {
+  display: flex;
+  width: max-content;
+  animation: trace-scroll 38s linear infinite;
+}
+
+.trace-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes trace-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trace-track {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Ambient hero glow orbs */
+.glow-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.glow-orb-brass {
+  background: radial-gradient(circle, var(--brass) 0%, transparent 70%);
+  animation: float-a 16s ease-in-out infinite;
+}
+
+.glow-orb-trace {
+  background: radial-gradient(circle, var(--trace) 0%, transparent 70%);
+  animation: float-b 20s ease-in-out infinite;
+}
+
+@keyframes float-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, 30px) scale(1.15); }
+}
+
+@keyframes float-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, -40px) scale(1.1); }
+}
+
+/* Fine grain texture overlay for premium feel */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Card tilt on hover */
+.tilt-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tilt-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -20px rgba(11, 18, 32, 0.35);
+}
+
+/* Carousel crossfade */
+.carousel-slide {
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Chatbot */
+@keyframes chat-pop {
+  from { opacity: 0; transform: scale(0.9) translateY(12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.chat-panel {
+  animation: chat-pop 0.25s ease;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(184, 146, 90, 0.5); }
+  70% { box-shadow: 0 0 0 12px rgba(184, 146, 90, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(184, 146, 90, 0); }
+}
+
+.chat-fab {
+  animation: pulse-ring 2.5s ease-out infinite;
+}
+
+/* Reveal-on-scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.underline-draw {
+  position: relative;
+  text-decoration: none;
+}
+
+.underline-draw::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: var(--brass);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.underline-draw:hover::after {
+  transform: scaleX(1);
+}

@@ -23,8 +23,8 @@ export default function CertificateGallery() {
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 flex items-end bg-ink/0 p-4 transition-colors duration-300 group-hover:bg-ink/40">
-                <span className="translate-y-2 font-mono text-xs uppercase tracking-widest text-paper opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+              <div className="absolute inset-0 flex items-end bg-black/0 p-4 transition-colors duration-300 group-hover:bg-black/50">
+                <span className="translate-y-2 font-mono text-xs uppercase tracking-widest text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                   Expand →
                 </span>
               </div>
@@ -39,11 +39,11 @@ export default function CertificateGallery() {
 
       {active !== null && (
         <div
-          className="fixed inset-0 z-[60] flex items-center justify-center bg-ink/90 p-6"
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90 p-6"
           onClick={() => setActive(null)}
         >
           <button
-            className="absolute right-6 top-6 font-mono text-xs uppercase tracking-widest text-paper hover:text-brass"
+            className="absolute right-6 top-6 font-mono text-xs uppercase tracking-widest text-white hover:text-brass"
             onClick={() => setActive(null)}
           >
             Close ✕
@@ -60,7 +60,7 @@ export default function CertificateGallery() {
                 className="object-contain"
               />
             </div>
-            <p className="mt-4 font-display text-xl text-paper">
+            <p className="mt-4 font-display text-xl text-white">
               {certifications[active].title}
             </p>
             <p className="font-mono text-xs uppercase tracking-widest text-brass-soft">
@@ -71,7 +71,7 @@ export default function CertificateGallery() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="mt-3 inline-block font-mono text-[11px] uppercase tracking-widest text-paper/60 underline-draw hover:text-brass"
+              className="mt-3 inline-block font-mono text-[11px] uppercase tracking-widest text-white/60 underline-draw hover:text-brass"
             >
               View original PDF →
             </a>

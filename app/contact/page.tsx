@@ -2,7 +2,7 @@ import { profile } from "@/lib/data";
 import SectionHeading from "@/components/SectionHeading";
 import RevealOnScroll from "@/components/RevealOnScroll";
 
-export const metadata = { title: "Contact — Aanya Saraswat" };
+export const metadata = { title: "Contact · Aanya Saraswat" };
 
 export default function ContactPage() {
   return (
@@ -11,7 +11,7 @@ export default function ContactPage() {
         <SectionHeading
           eyebrow="Contact"
           title="Let's talk about the role."
-          description="I'm currently open to new-grad and internship opportunities in software engineering, backend systems, and applied ML. The fastest way to reach me is email."
+          description="I am currently open to new graduate and internship opportunities in software engineering, backend systems, and applied machine learning. The fastest way to reach me is email."
         />
       </RevealOnScroll>
 

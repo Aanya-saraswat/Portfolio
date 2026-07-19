@@ -39,7 +39,7 @@ export default function Chatbot() {
       <button
         onClick={() => setOpen((v) => !v)}
         aria-label="Open chat assistant"
-        className={`chat-fab fixed bottom-6 right-6 z-[70] flex h-14 w-14 items-center justify-center rounded-full border border-brass bg-ink text-paper shadow-lg transition-transform hover:scale-105 ${open ? "rotate-0" : ""}`}
+        className={`chat-fab fixed bottom-6 right-6 z-[70] flex h-14 w-14 items-center justify-center rounded-full border border-brass bg-paper-dim text-graphite shadow-lg transition-transform hover:scale-105 ${open ? "rotate-0" : ""}`}
       >
         {open ? (
           <span className="font-mono text-lg">✕</span>
@@ -49,9 +49,9 @@ export default function Chatbot() {
       </button>
 
       {open && (
-        <div className="chat-panel fixed bottom-24 right-6 z-[70] flex h-[28rem] w-[22rem] max-w-[calc(100vw-3rem)] flex-col overflow-hidden rounded-md border border-line-dark bg-ink shadow-2xl">
+        <div className="chat-panel fixed bottom-24 right-6 z-[70] flex h-[28rem] w-[22rem] max-w-[calc(100vw-3rem)] flex-col overflow-hidden rounded-md border border-line bg-paper-dim shadow-2xl">
           <div className="border-b border-white/10 px-5 py-4">
-            <p className="font-display text-lg text-paper">Ask about Aanya</p>
+            <p className="font-display text-lg text-graphite">Ask about Aanya</p>
             <p className="font-mono text-[10px] uppercase tracking-widest text-brass-soft">
               Instant answers · no scheduling needed
             </p>
@@ -63,8 +63,8 @@ export default function Chatbot() {
                 key={i}
                 className={`max-w-[85%] rounded-md px-3.5 py-2.5 text-sm leading-relaxed ${
                   m.role === "user"
-                    ? "ml-auto bg-brass text-ink"
-                    : "bg-white/5 text-paper/85"
+                    ? "ml-auto bg-brass text-paper"
+                    : "bg-white/5 text-graphite/85"
                 }`}
               >
                 {m.text}
@@ -78,7 +78,7 @@ export default function Chatbot() {
                 <button
                   key={p}
                   onClick={() => send(p)}
-                  className="rounded-sm border border-white/15 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wide text-paper/60 hover:border-brass hover:text-brass"
+                  className="rounded-sm border border-white/15 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wide text-graphite/60 hover:border-brass hover:text-brass"
                 >
                   {p}
                 </button>
@@ -97,7 +97,7 @@ export default function Chatbot() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask a question..."
-              className="flex-1 bg-transparent px-2 py-2 text-sm text-paper placeholder:text-paper/30 focus:outline-none"
+              className="flex-1 bg-transparent px-2 py-2 text-sm text-graphite placeholder:text-graphite/30 focus:outline-none"
             />
             <button
               type="submit"

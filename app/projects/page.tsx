@@ -3,7 +3,7 @@ import SectionHeading from "@/components/SectionHeading";
 import ProjectCard from "@/components/ProjectCard";
 import RevealOnScroll from "@/components/RevealOnScroll";
 
-export const metadata = { title: "Projects — Aanya Saraswat" };
+export const metadata = { title: "Projects · Aanya Saraswat" };
 
 export default function ProjectsPage() {
   return (
@@ -11,7 +11,7 @@ export default function ProjectsPage() {
       <RevealOnScroll>
         <SectionHeading
           eyebrow="Projects"
-          title="Built end to end — model, backend, and interface."
+          title="Built end to end · model, backend, and interface."
           description="Each project below started as a real problem I wanted solved, not a tutorial. Click through for architecture, decisions, and outcomes."
         />
       </RevealOnScroll>

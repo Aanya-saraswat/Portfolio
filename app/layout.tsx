@@ -25,9 +25,9 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aanya Saraswat — Software Engineer",
+  title: "Aanya Saraswat · Software Engineer",
   description:
-    "Portfolio of Aanya Saraswat — ECE engineer, full-stack developer, and applied ML builder.",
+    "Portfolio of Aanya Saraswat · Electronics and Communication Engineer, full stack developer, and applied machine learning builder.",
 };
 
 export default function RootLayout({

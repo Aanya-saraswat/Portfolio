@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #0b1220;
+  --ink: #f3f1ea;
   --ink-soft: #141b2b;
-  --paper: #f3f1ea;
-  --paper-dim: #e7e4da;
-  --graphite: #14171c;
-  --graphite-soft: #4b4f57;
+  --paper: #0a0e1a;
+  --paper-dim: #131a2c;
+  --graphite: #eef0f6;
+  --graphite-soft: #9aa5bd;
   --brass: #b8925a;
   --brass-soft: #d9bd94;
-  --trace: #4c7a6d;
-  --line: #d8d5cc;
-  --line-dark: #253046;
+  --trace: #5b8def;
+  --line: #232c42;
+  --line-dark: #232c42;
 }
 
 @theme inline {
@@ -186,4 +186,89 @@ body {
 
 .underline-draw:hover::after {
   transform: scaleX(1);
+}
+
+/* Starfield backdrop */
+.starfield {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(1.5px 1.5px at 20px 30px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 90px 120px, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1.5px 1.5px at 150px 60px, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1px 1px at 200px 180px, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1.5px 1.5px at 260px 20px, rgba(255,255,255,0.35), transparent),
+    radial-gradient(1px 1px at 310px 140px, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1.5px 1.5px at 40px 200px, rgba(91,141,239,0.5), transparent),
+    radial-gradient(1px 1px at 350px 90px, rgba(91,141,239,0.4), transparent);
+  background-repeat: repeat;
+  background-size: 380px 220px;
+  animation: star-drift 90s linear infinite, star-twinkle 4s ease-in-out infinite alternate;
+}
+
+@keyframes star-drift {
+  from { background-position: 0 0; }
+  to { background-position: -760px 440px; }
+}
+
+@keyframes star-twinkle {
+  from { opacity: 0.7; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .starfield {
+    animation: none;
+  }
+}
+
+/* Typewriter role text */
+.typewriter-cursor {
+  display: inline-block;
+  width: 2px;
+  margin-left: 2px;
+  background: var(--trace);
+  animation: cursor-blink 0.9s step-end infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Robot wave */
+@keyframes robot-wave {
+  0%, 100% { transform: rotate(0deg); }
+  15% { transform: rotate(-18deg); }
+  30% { transform: rotate(14deg); }
+  45% { transform: rotate(-18deg); }
+  60% { transform: rotate(10deg); }
+  75%, 100% { transform: rotate(0deg); }
+}
+
+.robot-arm {
+  transform-origin: 78% 38%;
+  animation: robot-wave 2.6s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@keyframes robot-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.robot-body {
+  animation: robot-bob 3.2s ease-in-out infinite;
+}
+
+@keyframes bubble-pop {
+  from { opacity: 0; transform: scale(0.85) translateY(6px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.robot-bubble {
+  animation: bubble-pop 0.5s ease 0.6s both;
 }

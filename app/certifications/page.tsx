@@ -3,7 +3,7 @@ import SectionHeading from "@/components/SectionHeading";
 import CertificateGallery from "@/components/CertificateGallery";
 import RevealOnScroll from "@/components/RevealOnScroll";
 
-export const metadata = { title: "Certifications — Aanya Saraswat" };
+export const metadata = { title: "Certifications · Aanya Saraswat" };
 
 export default function CertificationsPage() {
   return (

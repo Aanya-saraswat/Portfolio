@@ -2,7 +2,6 @@ export default function SectionHeading({
   eyebrow,
   title,
   description,
-  light = false,
 }: {
   eyebrow: string;
   title: string;
@@ -11,26 +10,14 @@ export default function SectionHeading({
 }) {
   return (
     <div className="max-w-2xl">
-      <p
-        className={`font-mono text-xs uppercase tracking-[0.2em] ${
-          light ? "text-brass-soft" : "text-brass"
-        }`}
-      >
+      <span className="inline-block rounded-full border border-trace/40 bg-trace/10 px-4 py-1.5 font-mono text-xs uppercase tracking-[0.2em] text-trace">
         {eyebrow}
-      </p>
-      <h2
-        className={`mt-3 font-display text-3xl leading-tight md:text-4xl ${
-          light ? "text-paper" : "text-ink"
-        }`}
-      >
+      </span>
+      <h2 className="mt-4 font-display text-3xl leading-tight text-ink md:text-4xl">
         {title}
       </h2>
       {description && (
-        <p
-          className={`mt-4 text-base leading-relaxed ${
-            light ? "text-paper/70" : "text-graphite-soft"
-          }`}
-        >
+        <p className="mt-4 text-base leading-relaxed text-graphite-soft">
           {description}
         </p>
       )}

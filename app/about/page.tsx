@@ -2,7 +2,7 @@ import { about, education, profile } from "@/lib/data";
 import SectionHeading from "@/components/SectionHeading";
 import RevealOnScroll from "@/components/RevealOnScroll";
 
-export const metadata = { title: "About — Aanya Saraswat" };
+export const metadata = { title: "About · Aanya Saraswat" };
 
 export default function AboutPage() {
   return (

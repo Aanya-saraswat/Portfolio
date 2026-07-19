@@ -4,12 +4,15 @@ import SkillTicker from "@/components/SkillTicker";
 import SectionHeading from "@/components/SectionHeading";
 import RotatingShowcase from "@/components/RotatingShowcase";
 import RevealOnScroll from "@/components/RevealOnScroll";
+import Typewriter from "@/components/Typewriter";
+import RobotWave from "@/components/RobotWave";
 
 export default function Home() {
   return (
     <>
       {/* Hero */}
       <section className="grain relative overflow-hidden border-b border-line">
+        <div className="starfield" />
         <div className="glow-orb glow-orb-brass -left-24 -top-24 h-80 w-80" />
         <div className="glow-orb glow-orb-trace right-0 top-10 h-96 w-96" />
 
@@ -20,10 +23,23 @@ export default function Home() {
             </p>
           </RevealOnScroll>
 
+          <RevealOnScroll delay={80}>
+            <p className="mt-5 font-mono text-lg text-trace sm:text-xl">
+              I'm a{" "}
+              <Typewriter
+                words={profile.roles}
+                className="font-semibold text-trace"
+              />
+            </p>
+          </RevealOnScroll>
+
           <RevealOnScroll delay={100}>
-            <h1 className="mt-6 max-w-3xl font-display text-4xl leading-[1.1] text-ink sm:text-5xl md:text-6xl">
+            <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-tight text-ink sm:text-5xl md:text-6xl">
               {profile.tagline}
             </h1>
+            <p className="mt-4 font-display text-xl italic text-brass sm:text-2xl">
+              {profile.taglineAccent}
+            </p>
           </RevealOnScroll>
 
           <RevealOnScroll delay={200}>
@@ -48,6 +64,12 @@ export default function Home() {
               </Link>
             </div>
           </RevealOnScroll>
+
+          <RevealOnScroll delay={420}>
+            <div className="mt-14">
+              <RobotWave message={profile.robotGreeting} />
+            </div>
+          </RevealOnScroll>
         </div>
 
         {/* Stats strip */}
@@ -67,10 +89,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skill ticker — signature element */}
+      {/* Skill ticker: signature element */}
       <SkillTicker />
 
-      {/* Selected work — rotating showcase */}
+      {/* Selected work: rotating showcase */}
       <section className="mx-auto max-w-6xl px-6 py-24 md:px-10">
         <RevealOnScroll>
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
@@ -95,24 +117,23 @@ export default function Home() {
       </section>
 
       {/* About preview / IBM callout */}
-      <section className="border-y border-line-dark bg-ink py-24 text-paper">
+      <section className="border-y border-line bg-paper-dim py-24">
         <div className="mx-auto max-w-6xl px-6 md:px-10">
           <div className="grid gap-12 md:grid-cols-2 md:gap-20">
             <RevealOnScroll>
               <SectionHeading
                 eyebrow="Currently"
                 title="Inside enterprise observability at IBM."
-                light
               />
-              <p className="mt-6 max-w-md leading-relaxed text-paper/70">
+              <p className="mt-6 max-w-md leading-relaxed text-graphite-soft">
                 As a Customer Success Engineering Intern, I work with IBM
                 Concert on application observability, dependency mapping, and
-                operational health across hybrid cloud environments — while
+                operational health across hybrid cloud environments, while
                 building fluency in Docker, Kubernetes, and Red Hat OpenShift.
               </p>
               <Link
                 href="/experience"
-                className="mt-6 inline-block font-mono text-xs uppercase tracking-widest text-brass-soft underline-draw"
+                className="mt-6 inline-block font-mono text-xs uppercase tracking-widest text-brass underline-draw"
               >
                 Full experience →
               </Link>
@@ -122,16 +143,15 @@ export default function Home() {
               <SectionHeading
                 eyebrow="Foundation"
                 title="Electronics & Communication Engineering, Thapar Institute."
-                light
               />
-              <p className="mt-6 max-w-md leading-relaxed text-paper/70">
+              <p className="mt-6 max-w-md leading-relaxed text-graphite-soft">
                 A 9.01 CGPA and a habit of understanding systems from the
-                signal up — the same instinct I now bring to backend
+                signal up, the same instinct I now bring to backend
                 architecture and applied ML.
               </p>
               <Link
                 href="/about"
-                className="mt-6 inline-block font-mono text-xs uppercase tracking-widest text-brass-soft underline-draw"
+                className="mt-6 inline-block font-mono text-xs uppercase tracking-widest text-brass underline-draw"
               >
                 More about me →
               </Link>

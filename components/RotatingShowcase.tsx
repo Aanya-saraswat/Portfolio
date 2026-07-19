@@ -59,7 +59,7 @@ export default function RotatingShowcase() {
                   >
                     Featured Build {String(i + 1).padStart(2, "0")}
                   </p>
-                  <h3 className="mt-3 font-display text-2xl text-paper md:text-3xl">
+                  <h3 className="mt-3 font-display text-2xl text-white md:text-3xl">
                     {project.title}
                   </h3>
                 </div>

@@ -3,7 +3,7 @@ import SectionHeading from "@/components/SectionHeading";
 import Timeline from "@/components/Timeline";
 import RevealOnScroll from "@/components/RevealOnScroll";
 
-export const metadata = { title: "Experience — Aanya Saraswat" };
+export const metadata = { title: "Experience · Aanya Saraswat" };
 
 export default function ExperiencePage() {
   return (

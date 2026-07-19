@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import CommandPalette from "./CommandPalette";
 
 const links = [
   { href: "/about", label: "About" },
@@ -43,19 +44,23 @@ export default function Nav() {
           ))}
         </nav>
 
-        <button
-          className="flex flex-col gap-1.5 md:hidden"
-          aria-label="Toggle menu"
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span
-            className={`h-px w-6 bg-ink transition-transform ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
-          />
-          <span
-            className={`h-px w-6 bg-ink transition-transform ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`}
-          />
-        </button>
+        <div className="flex items-center gap-4">
+          <CommandPalette />
+
+          <button
+            className="flex flex-col gap-1.5 md:hidden"
+            aria-label="Toggle menu"
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span
+              className={`h-px w-6 bg-ink transition-transform ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
+            />
+            <span
+              className={`h-px w-6 bg-ink transition-transform ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`}
+            />
+          </button>
+        </div>
       </div>
 
       {open && (

@@ -2,6 +2,7 @@ import { projects } from "@/lib/data";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import RevealOnScroll from "@/components/RevealOnScroll";
+import ProjectVisual from "@/components/ProjectVisual";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -46,7 +47,11 @@ export default async function ProjectDetail({
           {project.summary}
         </p>
 
-        <div className="mt-6 flex flex-wrap gap-2">
+        <div className="mt-8">
+          <ProjectVisual project={project} />
+        </div>
+
+        <div className="mt-8 flex flex-wrap gap-2">
           {project.stack.map((tech) => (
             <span
               key={tech}

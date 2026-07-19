@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
+import TerminalLauncher from "@/components/TerminalLauncher";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -42,6 +43,7 @@ export default function RootLayout({
         <main className="min-h-screen">{children}</main>
         <Footer />
         <Chatbot />
+        <TerminalLauncher />
       </body>
     </html>
   );

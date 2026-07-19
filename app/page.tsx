@@ -33,10 +33,16 @@ export default function Home() {
             </p>
           </RevealOnScroll>
 
-          <RevealOnScroll delay={100}>
-            <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-tight text-ink sm:text-5xl md:text-6xl">
-              {profile.tagline}
+          <RevealOnScroll delay={90}>
+            <h1 className="mt-4 font-display text-5xl font-semibold leading-[1] tracking-tight text-ink sm:text-6xl md:text-7xl lg:text-8xl">
+              {profile.name}
             </h1>
+          </RevealOnScroll>
+
+          <RevealOnScroll delay={100}>
+            <p className="mt-6 max-w-3xl font-display text-3xl font-medium leading-[1.15] tracking-tight text-graphite-soft sm:text-4xl">
+              {profile.tagline}
+            </p>
             <p className="mt-4 font-display text-xl italic text-brass sm:text-2xl">
               {profile.taglineAccent}
             </p>

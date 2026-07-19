@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { projects } from "@/lib/data";
+import ProjectVisual from "./ProjectVisual";
 
 export default function ProjectCard({
   project,
@@ -11,15 +12,16 @@ export default function ProjectCard({
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className="tilt-card group block border-t border-line px-4 py-10 first:border-t-0 md:py-12"
+      className="tilt-card group block border-t border-line py-10 first:border-t-0 md:py-12"
     >
-      <div className="flex flex-col gap-4 md:flex-row md:items-baseline md:justify-between md:gap-10">
-        <span className="font-mono text-xs text-graphite-soft/60">
-          {String(index + 1).padStart(2, "0")}
-        </span>
+      <div className="grid gap-6 md:grid-cols-[1fr_1.3fr] md:items-center md:gap-10">
+        <ProjectVisual project={project} />
 
-        <div className="flex-1">
-          <h3 className="font-display text-2xl text-ink transition-colors group-hover:text-brass md:text-3xl">
+        <div>
+          <span className="font-mono text-xs text-graphite-soft/60">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <h3 className="mt-2 font-display text-2xl text-ink transition-colors group-hover:text-brass md:text-3xl">
             {project.title}
           </h3>
           <p className="mt-3 max-w-2xl text-graphite-soft leading-relaxed">
@@ -35,11 +37,10 @@ export default function ProjectCard({
               </span>
             ))}
           </div>
+          <span className="mt-5 inline-block font-mono text-xs uppercase tracking-widest text-brass opacity-0 transition-opacity group-hover:opacity-100">
+            View project →
+          </span>
         </div>
-
-        <span className="font-mono text-xs uppercase tracking-widest text-brass opacity-0 transition-opacity group-hover:opacity-100">
-          View →
-        </span>
       </div>
     </Link>
   );

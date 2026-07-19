@@ -1,8 +1,8 @@
 export default function RobotWave({ message }: { message: string }) {
   return (
-    <div className="flex items-end gap-4">
+    <div className="flex items-end gap-6">
       <div className="robot-body shrink-0">
-        <svg width="76" height="86" viewBox="0 0 76 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="128" height="146" viewBox="0 0 76 86" fill="none" xmlns="http://www.w3.org/2000/svg">
           {/* antenna */}
           <line x1="38" y1="4" x2="38" y2="14" stroke="var(--trace)" strokeWidth="2" />
           <circle cx="38" cy="4" r="3" fill="var(--trace)" />
@@ -28,7 +28,7 @@ export default function RobotWave({ message }: { message: string }) {
         </svg>
       </div>
 
-      <div className="robot-bubble relative mb-2 max-w-xs rounded-2xl rounded-bl-sm border border-line bg-paper-dim px-4 py-3 text-sm leading-relaxed text-graphite-soft shadow-lg">
+      <div className="robot-bubble relative mb-4 max-w-sm rounded-2xl rounded-bl-sm border border-line bg-paper-dim px-5 py-4 text-base leading-relaxed text-graphite-soft shadow-lg">
         {message}
       </div>
     </div>
